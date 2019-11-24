@@ -35,7 +35,13 @@ std::ostream& operator<<(std::ostream& outs, const Subject& subj)
 
 std::istream& operator>>(std::istream& ins, Subject& subj)
 {
-    // TODO: здесь необходимо дописать реализацию метода
+    getline(ins, subj.name, '\n');
+    getline(ins, subj.title, '\n');
+
+    int index = 0;
+    std::string line = "";
+    while (getline(ins, line, '\n') && line != "")
+        subj.description[index++] = line;
 
     return ins;
 }
