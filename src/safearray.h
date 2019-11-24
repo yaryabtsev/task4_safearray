@@ -49,7 +49,8 @@ public:
     SafeArray(size_t cap);
     
 
-    // TODO: не забудьте про конструктор копирования и еще кое-что!
+    SafeArray(const SafeArray& copy);
+    SafeArray& operator=(const SafeArray &other);
     
     /** \brief Деструктор.
      *
